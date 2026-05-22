@@ -30,19 +30,19 @@ const insertUserToDatabase = async (fullName, email, password) => {
 const handleLogin = async (
   username: string,
   password: string,
-  callback: any
+  callback: any,
 ) => {
   // check Username exist in Database
   const user = await prisma.user.findUnique({ where: { username: username } });
   if (!user) {
     return callback(null, false, {
-      message: `username ${username} is not exist`,
+      message: `Tài khoản ${username} không tồn tại!`,
     });
   }
   // compare Password
   const result = await comparePassword(password, user.password);
   if (!result) {
-    return callback(null, false, { message: `Invalid password` });
+    return callback(null, false, { message: `Mật khẩu không chính xác!` });
   }
   return callback(null, user);
 };

@@ -21,10 +21,10 @@ import {
   getLoginPage,
   getRegisterPage,
   getSuccessLoginPage,
+  handlePostLogin,
   postLogout,
   postRegister,
 } from "../controllers/authentication.controller";
-import passport from "passport";
 import { getChatPage } from "../controllers/client/chat.controller";
 import { getViewProduct } from "../controllers/client/view.controller";
 import { getResultPayment } from "../controllers/client/payment.controller";
@@ -64,14 +64,7 @@ clientRouter.get("/vnpay-return", getResultPayment);
 
 // Authentication
 clientRouter.get("/login", checkLogin, getLoginPage);
-clientRouter.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/successLoginPage",
-    failureRedirect: "/login",
-    failureMessage: true,
-  }),
-);
+clientRouter.post("/login", handlePostLogin);
 clientRouter.get("/register", checkLogin, getRegisterPage);
 clientRouter.post("/register", postRegister);
 clientRouter.get("/successLoginPage", getSuccessLoginPage);
