@@ -236,7 +236,9 @@ const handleSendMessage = async () => {
 };
 
 button.addEventListener("click", async () => {
+  input.disabled = true;
   await handleSendMessage();
+  input.disabled = false;
 });
 
 input.addEventListener("keydown", async (e) => {
