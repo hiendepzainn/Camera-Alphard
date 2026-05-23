@@ -73,10 +73,14 @@ app.add_middleware(
     allow_headers=["*"],
 ) 
 
+print("Đang khởi tạo dữ liệu tri thức...")
+
 if not os.path.exists("index_storage"):
     index = build_index("data")
 else:
     index = load_index()
+
+print("Dữ liệu sẵn sàng!")
 
 chat_sessions: Dict[str, any] = {}
 
@@ -91,11 +95,6 @@ class ChatResponse(BaseModel):
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
     global index, chat_sessions
-    if not os.path.exists("index_storage"):
-        index = build_index("data")
-        chat_sessions.clear()
-    else:
-        index = load_index()
 
     if req.session_id not in chat_sessions:
         memory = ChatMemoryBuffer.from_defaults(token_limit=1500)
