@@ -1,6 +1,6 @@
-# Graduation Thesis Web Application
+# Website Camera-Alphard
 
-Dưới đây là bản hướng dẫn cài đặt và chạy thử phần mềm cho Khóa luận tốt nghiệp.
+Dưới đây là bản hướng dẫn cài đặt và chạy thử phần mềm.
 
 ## 🚀 Công nghệ sử dụng
 
