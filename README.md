@@ -19,7 +19,7 @@ Dưới đây là bản hướng dẫn cài đặt và chạy thử phần mềm
 ## 1. Clone project
 
 ```bash
-git clone https://github.com/hiendepzainn/Learning-NodeJS.git
+git clone https://github.com/hiendepzainn/Camera-Alphard.git
 ```
 
 ---
@@ -27,7 +27,7 @@ git clone https://github.com/hiendepzainn/Learning-NodeJS.git
 ## 2. Di chuyển vào thư mục project
 
 ```bash
-cd Learning-NodeJS
+cd Camera-Alphard
 ```
 
 ---
